@@ -1,0 +1,4 @@
+model1:
+  api_key: "your_api_key"
+  base_url: "https://openrouter.ai/api/v1"
+  ai_model_id: "openrouter/optimus-alpha"
