@@ -37,15 +37,19 @@
 Cài đặt các thư viện cần thiết bằng lệnh:
 
 ```bash
-pip install pdfplumber semantic-kernel openai pyfiglet rich pyyaml
+pip install -r requiremens.txt
 ```
 
 > API Key: Cần có API key từ OpenRouter để sử dụng dịch vụ AI. Đăng ký tại OpenRouter.
 
 ## Cài đặt và cấu hình
 
-- **Tải mã nguồn**:
-    - Tải mã nguồn từ kho lưu trữ (repository) hoặc giải nén file dự án.
+- **Clone mã nguồn từ GitHub**:
+   - Clone dự án từ kho lưu trữ:
+     ```bash
+     git clone https://github.com/pnnbao97/PDFTranslator
+     cd PDFTranslator
+     pip install -r requirements.txt
     - **Cấu trúc thư mục mẫu**:
 ```
     pdf_translator/
