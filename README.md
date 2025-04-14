@@ -37,7 +37,7 @@
 Cài đặt các thư viện cần thiết bằng lệnh:
 
 ```bash
-pip install -r requiremens.txt
+pip install -r requirements.txt
 ```
 
 > API Key: Cần có API key từ OpenRouter để sử dụng dịch vụ AI. Đăng ký tại OpenRouter.
@@ -45,7 +45,6 @@ pip install -r requiremens.txt
 ## Cài đặt và cấu hình
 
 - **Clone mã nguồn từ GitHub**:
-   - Clone dự án từ kho lưu trữ:
      ```bash
      git clone https://github.com/pnnbao97/PDFTranslator
      cd PDFTranslator
