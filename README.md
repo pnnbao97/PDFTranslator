@@ -49,7 +49,7 @@ pip install -r requirements.txt
      git clone https://github.com/pnnbao97/PDFTranslator
      cd PDFTranslator
      pip install -r requirements.txt
-    - **Cấu trúc thư mục mẫu**:
+- **Cấu trúc thư mục mẫu**:
 ```
     pdf_translator/
     ├── PDFtranslator.py
