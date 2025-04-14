@@ -48,7 +48,10 @@ pip install -r requirements.txt
      ```bash
      git clone https://github.com/pnnbao97/PDFTranslator
      cd PDFTranslator
+     python -m venv venv
+     source venv/bin/activate
      pip install -r requirements.txt
+
 - **Cấu trúc thư mục mẫu**:
 ```
     pdf_translator/
