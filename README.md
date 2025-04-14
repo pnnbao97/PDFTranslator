@@ -1,5 +1,5 @@
 # PDF Translator
-
+![giao diện CLI](images/image.png)
 **PDF Translator** là một công cụ dịch thuật thông minh sử dụng AI để dịch văn bản từ file PDF tiếng Anh sang tiếng Việt. Chương trình hỗ trợ nhiều phong cách dịch (trang trọng/thân mật), kiểu dịch (sát nghĩa, tóm tắt, linh hoạt), và lưu trữ kết quả dịch để tiếp tục nếu bị gián đoạn. Giao diện thân thiện với thanh tiến độ và thông báo màu sắc giúp trải nghiệm mượt mà.
 
 - **Phiên bản**: 1.0
