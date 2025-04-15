@@ -1,5 +1,4 @@
 from typing import Optional, List, Tuple
-import tempfile
 import sqlite3
 import pdfplumber
 import asyncio
@@ -8,6 +7,8 @@ import logging
 import os
 from semantic_kernel import Kernel
 from semantic_kernel.contents import ChatHistory
+from semantic_kernel.connectors.ai.google.google_ai import GoogleAIChatCompletion
+# from semantic_kernel.connectors.ai.hugging_face import HuggingFacePromptExecutionSettings
 from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion
 from semantic_kernel.agents import ChatCompletionAgent
 from openai import AsyncOpenAI
@@ -130,7 +131,7 @@ def get_user_input() -> dict:
 
     inputs["model"] = Prompt.ask(
         "📝 [bold]Model AI sử dụng để dịch (trong config.yaml)[/bold]",
-        default="model1"
+        default="openrouter"
     )
     return inputs
 
@@ -145,8 +146,18 @@ def initialize_kernel(model: str):
         )
     ))
 
+
     return kernel
 
+def initialize_google_kernel(model: str):
+    kernel = Kernel()
+
+    kernel.add_service(GoogleAIChatCompletion(
+        gemini_model_id=CONFIG[model]["ai_model_id"],
+        api_key=CONFIG[model]["api_key"]
+    ))
+
+    return kernel
 
 def create_agents(kernel: Kernel, instructions: str, model: str):
 
@@ -312,7 +323,10 @@ async def main(
     model: str,
     db_path: str = "translations.db") -> bool:
     
-    kernel = initialize_kernel(model)
+    if model == "google":
+        kernel = initialize_google_kernel(model)
+    else:
+        kernel = initialize_kernel(model)
     translator = create_agents(kernel, instructions, model)
     if not await test_model(translator, CONFIG[model]["ai_model_id"]):
         console.print("[red]❌ Model không khả dụng. Vui lòng kiểm tra lại cấu hình trong file config.yaml ![/red]")
